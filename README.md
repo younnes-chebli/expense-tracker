@@ -2,3 +2,6 @@
 
 ## Technologies Used
 * React.js
+
+## The App
+
