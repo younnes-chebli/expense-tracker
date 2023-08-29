@@ -1,12 +1,16 @@
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
+    const titleInputHandler = (e) => {
+        console.log(e.target.value);
+    }
+
     return (
         <form>
             <div className="new-expense__contols">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input type="text"/>
+                    <input type="text" onInput={titleInputHandler}/>
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
