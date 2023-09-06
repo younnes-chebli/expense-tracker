@@ -7,16 +7,16 @@ const ExpenseForm = () => {
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
 
-    const titleChangeHandler = (e) => {
-        setEnteredTitle(e.target.value);
-    }
-
-    const amountChangeHandler = (e) => {
-        setEnteredAmount(e.target.value);
-    }
-
-    const dateChangeHandler = (e) => {
-        setEnteredDate(e.target.value);
+    const inputChangeHandler = (e) => {
+        if(e.target.name === 'title') {
+            setEnteredTitle(e.target.value);
+        }
+        if(e.target.name === 'amount') {
+            setEnteredAmount(e.target.value);
+        }
+        if(e.target.name === 'date') {
+            setEnteredDate(e.target.value);
+        }
     }
 
     return (
@@ -24,15 +24,15 @@ const ExpenseForm = () => {
             <div className="new-expense__contols">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input type="text" onChange={titleChangeHandler}/>
+                    <input type="text" name="title" onChange={inputChangeHandler}/>
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler}/>
+                    <input type="number" min="0.01" step="0.01" name="amount" onChange={inputChangeHandler}/>
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" min="2019-01-01" max="2023-12-31" onChange={dateChangeHandler}/>
+                    <input type="date" min="2019-01-01" max="2023-12-31" name="date" onChange={inputChangeHandler}/>
                 </div>
             </div>
             <div className="new-expense__actions">
